@@ -33,7 +33,25 @@ def process_image(image_path):
 
         results= model(img)
         #results 
-        predictions = results.pred[0]
+
+   
+        #apply the model 
+
+        results= model(img)
+        results.ims
+        print(type(results.render()))
+      
+        base64_images=[]
+        for im in results.ims:
+            print(type(im))
+            buffered = BytesIO()
+            im_based64= Image.fromarray(im)
+            im_based64.save(buffered,format="JPEG")
+
+            base64_images.append(base64.b64encode(buffered.getvalue()).decode('utf-8'))
+            return print((base64_images))
+        
+        ''' predictions = results.pred[0]
         boxes= predictions[:,:4]
         scores= predictions[:,4]
         categories= predictions[:,5]
@@ -46,7 +64,7 @@ def process_image(image_path):
         
       
        # print(results.save(save_dir='/home/ezoa/Documents/learning_git/fastai/results/',))
-        '''results.render()
+        results.render()
         base64_images=[]
         print (results.ims) 
         

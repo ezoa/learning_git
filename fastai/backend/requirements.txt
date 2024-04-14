@@ -1,0 +1,10 @@
+# torch
+# torchvision
+pillow
+numpy
+typing
+scikit-image
+fastapi
+python-multipart
+uvicorn[standard]
+yolov5
