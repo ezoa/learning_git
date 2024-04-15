@@ -1,7 +1,7 @@
 from typing import Union
 from fastapi import FastAPI, Response, requests, UploadFile, File
 
-
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import List
 import uvicorn
@@ -19,6 +19,8 @@ import os
 import io
 
 app = FastAPI()
+
+
 
 
 def process_image(img):

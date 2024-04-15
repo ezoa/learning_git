@@ -8,3 +8,4 @@ fastapi
 python-multipart
 uvicorn[standard]
 yolov5
+opencv-python

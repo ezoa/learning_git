@@ -8,9 +8,13 @@ services:
     
     image: backend
     container_name: backend
+    networks:
+      - app
 
     ports:
       - 8000:8000
+    expose:
+      - 8000
     volumes:
       - ./backend:/app
 
@@ -20,10 +24,18 @@ services:
       dockerfile: Dockerfile
     image: frontend
     container_name: frontend
+    networks:
+      - app
 
     ports:
       - 8501:8501
     volumes:
       - ./frontend:/app
+      
+networks:
+  app:
+    driver: bridge
+         
+
 
 

@@ -15,7 +15,7 @@ def call_api(file):
 
     try:
 
-        response = requests.post("http://localhost:8000/run_model", files=file)
+        response = requests.post("http://backend:8000/run_model", files=file)
 
         if response.status_code == 200:
             # convert the content byte into pillow
@@ -32,6 +32,8 @@ def call_api(file):
             st.error(f"connexion is not possible {response.status_code}")
 
     except Exception as e:
+
+        st.error(f"error in code {e}")
 
         return
 
@@ -53,7 +55,7 @@ def main():
         # st.image(image_file)
 
     # Button to run the model
-    if st.sidebar.button("Start Tracking"):
+    if st.sidebar.button("Detect"):
         if image_file is not None:
 
             call_api(image_file)
