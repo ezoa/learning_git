@@ -1,29 +1,53 @@
-
 # Project
 
+## Installation Instructions
 
+### Prerequisites
+Make sure to have Python and pip installed on your system. You can download them from [Python's official website](https://www.python.org/downloads/).
 
+### Frontend Installation
 
-## Installation
+Navigate to the `fastai/frontend` folder and run the following commands to set up the frontend of the application:
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install packages
-### fastai/frontend Folder
+1. Install the required packages:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-pip install -r requirements.txt
-streamlit run app.py
+2. Start the application using Streamlit:
+   ```bash
+   streamlit run app.py
+   ```
 
+### Backend Installation
 
-### Fastai/backend Folder
+Navigate to the `fastai/backend` folder and execute these commands to set up the backend:
 
-pip install -r requirements.txt
-uvicorn app:app --reload or python app.py
+1. Install the required packages:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-## Fastai
+2. Start the backend server (choose one of the following methods):
+   - Using Uvicorn with live reloading:
+     ```bash
+     uvicorn app:app --reload
+     ```
+   - Directly running the Python script:
+     ```bash
+     python app.py
+     ```
 
-docker-compose --build 
-docker-compose up
+### Using Docker
 
+To containerize and run the project using Docker, perform the following steps:
 
+1. Build the Docker images:
+   ```bash
+   docker-compose build
+   ```
 
-
-
+2. Launch the containers:
+   ```bash
+   docker-compose up
+   ```
