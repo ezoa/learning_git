@@ -17,6 +17,7 @@ permissions:
 
 jobs:
   release-build:
+    name: "let greet the user"
     runs-on: ubuntu-latest
 
     steps:
